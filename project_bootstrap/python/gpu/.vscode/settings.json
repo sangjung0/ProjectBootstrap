@@ -1,0 +1,115 @@
+// Author: SangJeong Kim
+// Last Modified: 2026-04-17
+
+{
+  "code-runner.runInTerminal": true,
+  "code-runner.executorMap": {
+    "python": "zsh -c 'set -a && source $workspaceRoot/.env && exec $workspaceRoot/.venv/bin/python -u $fullFileName'"
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+  },
+  "search.exclude": {
+    "**/.git": true,
+    "**/.vscode": true,
+    "**/__pycache__": true,
+    "**/output": true,
+    "**/log": true,
+    "**/.venv/**": true,
+    ".shortcuts/**": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.hg/store/**": true,
+    "**/.venv/**": true,
+    "**/__pycache__/**": true,
+    ".shortcuts/**": true
+  },
+  "python.analysis.exclude": [
+    "**/.git",
+    "**/.vscode",
+    "**/__pycache__",
+    "**/.venv",
+  ],
+  "python.analysis.extraPaths": [
+    "./src"
+  ],
+  "python.analysis.languageServerMode": "full",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.indexing": true,
+  "python.analysis.includeAliasesFromUserFiles": true,
+  "python.analysis.importFormat": "absolute",
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
+  "python-envs.defaultEnvManager": "ms-python.python:venv",
+  "python.envFile": "${workspaceFolder}/.env",
+  "jupyter.notebookFileRoot": "${workspaceFolder}",
+  // :TODOS:Tree
+  "todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
+  "todo-tree.filtering.excludeGlobs": [
+    "**/node_modules/*/**",
+    "**/.git/*/**",
+    "**/.vscode/*/**",
+    "**/__pycache__/*/**",
+    "**/.venv/*/**"
+  ],
+  // Editor
+  "editor.wordWrap": "on",
+  "editor.wrappingIndent": "indent",
+  "editor.fontFamily": "JetBrains Mono, D2Coding",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 18,
+  "editor.letterSpacing": 0,
+  "editor.detectIndentation": false,
+  "editor.trimAutoWhitespace": true,
+  "terminal.integrated.fontFamily": "JetBrains Mono, D2Coding",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+  // Formatter
+  "editor.formatOnSave": true,
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.tabSize": 4,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports.ruff": "explicit",
+      "source.fixAll.ruff": "explicit"
+    }
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "files.trimTrailingWhitespace": false
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[env]": {
+    "editor.defaultFormatter": "dotenv.dotenv-vscode"
+  },
+  "files.associations": {
+    ".env": "env",
+    ".env.*": "env"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.words": ["sjpy", "usecase"]
+}
