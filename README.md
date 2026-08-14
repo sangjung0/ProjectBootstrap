@@ -24,3 +24,6 @@ Project Bootstrap
 
 1. 해당 프로젝트로 복사, 붙여넣기 한다.
 2. 키워드별 원하는 문자열로 치환한다.
+    - %%PROJECT_NAME%% : 적용할 프로젝트 이름
+    - %%PROJECT_DESCRIPTION%% : 적용할 프로젝트 설명
+    - %%GITHUB_USERNAME%% : 기헙 사용자 이름
