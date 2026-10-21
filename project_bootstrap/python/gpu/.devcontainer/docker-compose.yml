@@ -31,7 +31,7 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              count: ["${CONTAINER_GPU_ID}"]
+              device_ids: ["${CONTAINER_GPU_ID}"]
               capabilities: [gpu]
     command: ["tail", "-f", "/dev/null"]
 
