@@ -1,0 +1,46 @@
+# Author: SangJeong Kim
+# Last Modified: 2026-08-14
+
+services:
+  service:
+    user: "${CONTAINER_UID}:${CONTAINER_UID}"
+    shm_size: ${CONTAINER_SHM_SIZE}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        CONTAINER_USER: ${CONTAINER_USER}
+        CONTAINER_UID: ${CONTAINER_UID}
+        CONTAINER_HOME: ${CONTAINER_HOME}
+    environment:
+      CONTAINER_WORK_DIR: /workspace
+    env_file:
+      - ./.env
+      - ../.env
+    volumes:
+      - ../:/workspace
+
+      # project bootstrap
+      - project_bootstrap:/workspace/.project-bootstrap:rw
+
+      # agents
+      - agents:/workspace/.agents:rw
+      - agent_workspace:/workspace/.agent-workspace:rw
+
+    command: ["tail", "-f", "/dev/null"]
+
+volumes:
+  agent_workspace:
+    driver: local
+  agents:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${AGENTS_PATH}
+  project_bootstrap:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${PROJECT_BOOTSTRAP_PATH}

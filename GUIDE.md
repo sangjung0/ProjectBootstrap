@@ -10,6 +10,7 @@
 
 ## 템플릿별 가이드
 
+- [에이전트 기본 환경](agent_base_bootstrap/GUIDE.md)
 - [공통 파일](project_bootstrap/base/GUIDE.md)
 - [Ubuntu Dev Container](project_bootstrap/devcontainer/GUIDE.md)
 - [Agent](project_bootstrap/agent/GUIDE.md)
