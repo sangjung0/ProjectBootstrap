@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Author: SangJeong Kim
-# Last Modified: 2026-08-03
+# Last Modified: 2026-10-22
 
 set -euo pipefail
 
@@ -21,8 +21,10 @@ elif [[ ! -d "${CONTAINER_WORK_DIR}" ]]; then
 fi
 
 echo "[INFO] step 1/1: change ownership to ${CONTAINER_USER}"
-sudo bash "${CONTAINER_WORK_DIR}/.devcontainer/sjsh/root/change_owner.sh" "${CONTAINER_USER}" \
-  --target "${CONTAINER_HOME}" \
-  --target "${CONTAINER_WORK_DIR}:${CONTAINER_WORK_DIR}/.agents"
+if [[ "$CONTAINER_USER" != root ]]; then
+  sudo bash "${CONTAINER_WORK_DIR}/.devcontainer/sjsh/root/change_owner.sh" "${CONTAINER_USER}" \
+    --target "${CONTAINER_HOME}" \
+    --target "${CONTAINER_WORK_DIR}:${CONTAINER_WORK_DIR}/.agents"
+fi
 
 echo "[INFO] post-create command completed successfully."
