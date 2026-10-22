@@ -24,7 +24,7 @@ fi
 echo "[INFO] step 1/2: change ownership to ${CONTAINER_USER}"
 sudo bash "${CONTAINER_WORK_DIR}/.devcontainer/sjsh/root/change_owner.sh" "${CONTAINER_USER}" \
   --target "${CONTAINER_HOME}:${CONTAINER_HOME}/.datasets" \
-  --target "${CONTAINER_WORK_DIR}"
+  --target "${CONTAINER_WORK_DIR}:${CONTAINER_WORK_DIR}/.agents"
 
 echo "[INFO] step 2/2: sync uv"
 bash "${CONTAINER_WORK_DIR}/.devcontainer/sjsh/common/wait_for_dir.sh" "${CONTAINER_WORK_DIR}/.venv"

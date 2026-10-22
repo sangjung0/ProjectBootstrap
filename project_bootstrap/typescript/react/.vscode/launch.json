@@ -1,0 +1,17 @@
+// Author: SangJeong Kim
+// Last Modified: 2026-10-21
+
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Web (Vite) - Chrome",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "web: dev",
+      "sourceMaps": true
+    }
+  ]
+}

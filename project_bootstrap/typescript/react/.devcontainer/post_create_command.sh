@@ -23,11 +23,18 @@ fi
 echo "[INFO] step 1/3: change ownership to ${CONTAINER_USER}"
 sudo bash "${CONTAINER_WORK_DIR}/.devcontainer/sjsh/root/change_owner.sh" "${CONTAINER_USER}" \
     --target "${CONTAINER_HOME}" \
-    --target "${CONTAINER_WORK_DIR}"
+    --target "${CONTAINER_WORK_DIR}:${CONTAINER_WORK_DIR}/.agents"
 
 echo "[INFO] step 2/3: enable corepack"
 corepack enable
 corepack prepare pnpm@latest --activate
 
 echo "[INFO] step 3/3: install dependencies"
-pnpm install --frozen-lockfile
+cd -- "${CONTAINER_WORK_DIR}"
+if [[ ! -f package.json ]]; then
+    echo "[INFO] No package.json yet. Follow README.md to create the application."
+elif [[ -f pnpm-lock.yaml ]]; then
+    pnpm install --frozen-lockfile
+else
+    pnpm install
+fi

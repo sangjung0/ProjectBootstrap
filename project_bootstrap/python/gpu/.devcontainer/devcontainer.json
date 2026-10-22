@@ -53,13 +53,6 @@
         // Python - end
 
 
-        // Sql
-        // Database 클라이언트. MySQL/PostgreSQL 등 쿼리 실행·브라우징.
-        "cweijan.vscode-database-client2",
-        // SQL Formatter (Rene Saarsoo). SQL 포매터.
-        "renesaarsoo.sql-formatter-vsc",
-        // Sql -- end
-
         // 기타 포매터
         // Prettier 포매터 (JS/TS/JSON/Markdown/TOML 등).
         "esbenp.prettier-vscode",
@@ -75,8 +68,6 @@
 
         // GPU 정보 확인 확장. nvidia-smi 결과를 UI로 보여줌.
         "rsip-vision.nvidia-smi-plus",
-        // Azure CLI 명령어 지원. 명령어 자동완성·하이라이트 등 제공.
-        "ms-vscode.azurecli",
         // Code Runner. Python/Zsh 등 단일 파일 빠른 실행.
         "formulahendry.code-runner",
         // 맞춤법/오타 검사기(cSpell). 단어 하이라이트 + 사용자 사전 지원.

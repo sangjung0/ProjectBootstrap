@@ -8,9 +8,9 @@
       "label": "python: run main.py (-O no asserts)",
       "type": "shell",
       "command": "${command:python.interpreterPath}",
-      "args": ["-O", "${workspaceFolder}/src/%%PROJECT_NAME%%/main.py"],
+      "args": ["-O", "${workspaceFolder}/src/%%PACKAGE_NAME%%/main.py"],
       "options": {
-        "envFile": "${workspaceFolder}/.env"
+        "cwd": "${workspaceFolder}"
       },
       "problemMatcher": [],
       "presentation": { "reveal": "always", "panel": "dedicated" }
@@ -21,7 +21,7 @@
       "command": "${command:python.interpreterPath}",
       "args": ["-O", "${file}"],
       "options": {
-        "envFile": "${workspaceFolder}/.env"
+        "cwd": "${workspaceFolder}"
       },
       "problemMatcher": [],
       "presentation": { "reveal": "always", "panel": "dedicated" }
@@ -32,7 +32,7 @@
       "command": "${command:python.interpreterPath}",
       "args": ["-OO", "${file}"],
       "options": {
-        "envFile": "${workspaceFolder}/.env"
+        "cwd": "${workspaceFolder}"
       },
       "problemMatcher": [],
       "presentation": { "reveal": "always", "panel": "dedicated" }

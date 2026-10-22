@@ -2,11 +2,11 @@
 // Last Modified: 2026-10-21
 
 {
-  "name": "personal_library-dev",
+  "name": "%%PROJECT_NAME%%-dev",
   "dockerComposeFile": "docker-compose.yml",
   "service": "service",
   "remoteUser": "root",
-  "workspaceFolder": "/workspaces/personal_library",
+  "workspaceFolder": "/workspaces/%%PROJECT_NAME%%",
   "postCreateCommand": "bash ${containerWorkspaceFolder}/.devcontainer/post_create_command.sh",
 
   // for linux container

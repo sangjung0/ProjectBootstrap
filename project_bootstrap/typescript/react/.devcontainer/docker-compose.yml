@@ -24,7 +24,7 @@ services:
       - dist:${CONTAINER_WORK_DIR}/dist
 
       # agents
-      - agents:${CONTAINER_WORK_DIR}/.agents:rw
+      - agents:${CONTAINER_WORK_DIR}/.agents:ro
       - agent_workspace:${CONTAINER_WORK_DIR}/.agent-workspace:rw
     command: sleep infinity
     ports:

@@ -3,7 +3,7 @@
 
 FROM ubuntu:24.04
 
-ENV DEBIAN_FRONTEND=noninteractive
+ARG DEBIAN_FRONTEND=noninteractive
 SHELL ["/bin/bash", "-lc"]
 
 # INSTALL DEPENDENCIES
@@ -45,13 +45,10 @@ RUN ${SCRIPT_PATH}/root/setup_zsh_for_user.sh ${CONTAINER_USER}
 
 # CLEANUP
 RUN rm -rf /tmp/* || true
-ENV DEBIAN_FRONTEND=dialog
 
 # SWITCH USER
 USER ${CONTAINER_USER}
 
 # INSTALL UV
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
-ENV PATH="${CONTAINER_HOME}/.uv/bin:$PATH"
-
-SHELL ["/bin/zsh", "-lc"]
+ENV PATH="${CONTAINER_HOME}/.local/bin:$PATH"

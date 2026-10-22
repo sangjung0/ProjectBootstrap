@@ -3,9 +3,7 @@
 
 {
   "code-runner.runInTerminal": true,
-  "code-runner.executorMap": {
-    "python": "zsh -c 'set -a && source $workspaceRoot/.env && exec $workspaceRoot/.venv/bin/python -u $fullFileName'"
-  },
+  "code-runner.executorMap": {},
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -16,18 +14,14 @@
   "search.exclude": {
     "**/.git": true,
     "**/.vscode": true,
-    "**/__pycache__": true,
     "**/output": true,
     "**/log": true,
-    "**/.venv/**": true,
     ".shortcuts/**": true
   },
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
     "**/.hg/store/**": true,
-    "**/.venv/**": true,
-    "**/__pycache__/**": true,
     ".shortcuts/**": true
   },
   // :TODOS:Tree
@@ -35,9 +29,7 @@
   "todo-tree.filtering.excludeGlobs": [
     "**/node_modules/*/**",
     "**/.git/*/**",
-    "**/.vscode/*/**",
-    "**/__pycache__/*/**",
-    "**/.venv/*/**"
+    "**/.vscode/*/**"
   ],
   // Editor
   "editor.wordWrap": "on",
@@ -85,5 +77,5 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["sjpy", "usecase"]
+  "cSpell.words": []
 }

@@ -1,1 +1,7 @@
 .env
+
+# agents
+.agent-state
+.agent-workspace
+.agents
+AGENTS.md

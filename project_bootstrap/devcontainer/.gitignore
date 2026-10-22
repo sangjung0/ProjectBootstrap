@@ -1,0 +1,17 @@
+# Local environment
+.env
+.env.*
+!.env.example
+# Local files
+.DS_Store
+Thumbs.db
+.idea/
+*.log
+# Generated output
+build/
+dist/
+# Downloaded setup scripts
+.devcontainer/sjsh/
+# Personal scratch files
+**__dis__**
+

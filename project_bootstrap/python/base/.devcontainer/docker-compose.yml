@@ -25,7 +25,8 @@ services:
       - uv_cache:${CONTAINER_HOME}/.cache/uv
 
       # agents
-      - agents:${CONTAINER_WORK_DIR}/.agents:rw
+      - agents:${CONTAINER_WORK_DIR}/.agents:ro
+      - agent_workspace:${CONTAINER_WORK_DIR}/.agent-workspace
 
     command: ["tail", "-f", "/dev/null"]
 
@@ -44,3 +45,5 @@ volumes:
       type: none
       o: bind
       device: ${AGENTS_PATH}
+  agent_workspace:
+    driver: local

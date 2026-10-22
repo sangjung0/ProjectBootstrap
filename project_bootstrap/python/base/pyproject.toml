@@ -12,22 +12,20 @@ dependencies = [
 ]
 
 [project.scripts]
-pill-preprocess = "%%PROJECT_NAME%%.main:main"
+"%%PROJECT_NAME%%" = "%%PACKAGE_NAME%%.main:main"
 
 [dependency-groups]
 dev = [
-    "ipykernel>=7.2.0",
-    "ipywidgets>=8.1.8",
-    "jupyterlab>=4.5.6",
-    "matplotlib>=3.10.8",
-    "notebook>=7.5.5",
-]
-test = [
     "mypy>=1.20.0",
     "pytest>=9.0.2",
     "pytest-dotenv>=0.5.2",
     "ruff>=0.15.9",
-    "types-tqdm>=4.67.3.20260408",
+]
+notebook = [
+    "ipykernel>=7.2.0",
+    "ipywidgets>=8.1.8",
+    "jupyterlab>=4.5.6",
+    "matplotlib>=3.10.8",
 ]
 
 [tool.mypy]
@@ -39,12 +37,8 @@ exclude = [
     "^tests/scripts/",
 ]
 files = [
-    "src/%%PROJECT_NAME%%",
+    "src/%%PACKAGE_NAME%%",
 ]
-
-[[tool.mypy.overrides]]
-module = []
-ignore_missing_imports = true
 
 [tool.ruff]
 target-version = "py312"
@@ -63,7 +57,8 @@ select = [
 
 [tool.pytest.ini_options]
 env_files=[".env"]
-addopts = "--ignore=tests/unit --ignore=tests/scripts"
+testpaths = ["tests"]
+addopts = "--ignore=tests/scripts"
 pythonpath = ["src"]
 
 [tool.setuptools]
@@ -72,4 +67,4 @@ include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["%%PROJECT_NAME%%*", "%%PROJECT_NAME%%.*"]
+include = ["%%PACKAGE_NAME%%", "%%PACKAGE_NAME%%.*"]

@@ -1,0 +1,114 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "web: dev",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "pnpm dev --host 0.0.0.0 --port 5173 --strictPort"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "vite",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "vite v|VITE v",
+          "endsPattern": "ready in|Local:"
+        },
+        "pattern": [
+          {
+            "regexp": "^(.*)$",
+            "message": 1
+          }
+        ]
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "group": "build"
+    },
+    {
+      "label": "web: build",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "pnpm run build"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "web: preview",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "pnpm run preview --host 0.0.0.0 --port 4173 --strictPort"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "VITE v|Preview server|vite preview",
+          "endsPattern": "Local:"
+        },
+        "pattern": [
+          {
+            "regexp": "."
+          }
+        ]
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "web: lint",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "pnpm run lint"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "test",
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "web: typecheck",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "pnpm exec tsc -b --pretty"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "test",
+      "presentation": {
+        "reveal": "always"
+      }
+    }
+  ]
+}
